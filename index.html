@@ -1,58 +1,189 @@
 <!DOCTYPE HTML>
 <!--
-	Aerial by HTML5 UP
+	Spectral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
-<!--
-	SAFE_BOX: 	https://cern.ch
-				https://cernbox.cern.ch
-				/go/X8HN
-				/index.php/s/MvFJScbChOxE2A6
-	P/W:		4.e
--->
-
 <html>
 	<head>
 		<title>Apostolos Smyrnakis</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="loading">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1>Apostolos  Smyrnakis</h1>
-						<p>BSc Computer Systems Engineering</p> <!-- &nbsp;&bull;&nbsp; -->
-						<nav>
+					<header id="header" class="alt">
+						<h1><a href="index.html">Apostolos Smyrnakis</a></h1>
+						<nav id="nav">
 							<ul>
-								<li><a target="_blank" href="https://linkedin.com/in/apostolosSmyrnakis" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a target="_blank" href="mailto:me@smyrnakis.info" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="index.html#about">About</a></li>
+											<li><a href="index.html#projects">Projects</a></li>
+											<li><a href="index.html#cta">Contact</a></li>
+											<!-- <li><a href="generic.html">Generic</a></li> -->
+											<!-- <li><a href="elements.html">Elements</a></li> -->
+										</ul>
+									</div>
+								</li>
 							</ul>
 						</nav>
 					</header>
 
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Apostolos  Smyrnakis</h2>
+							<p>BSc Computer Systems Engineering</p>
+							<br />
+							<!-- <ul class="actions special">
+								<li><a href="#" class="button primary">Button</a></li>
+							</ul> -->
+						</div>
+						<a href="#about" class="more scrolly">Learn More</a>
+					</section>
+
+				<!-- about -->
+					<section id="about" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Who am I?</h2>
+								<p><br />I am a Computer Systems Engineer, with professional experience in Windows Systems Administration and scripting automations for Windows OS since 2017.<br />
+									<br />Apart from Windows, Linux and microcontrollers share a great part of my free time.<br />Combining creativity with my advanced knowledge on electronic circuits and my rapid prototyping ability, I love building automations and gadgets.<br />
+								</p>
+								<br />
+							</header>
+							<!-- USE THIS TO ADD TECHNOLOGIES AND COMPETENCES ICONS -->
+							<!-- <ul class="icons major">
+								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul> -->
+						</div>
+					</section>
+
+				<!-- projects -->
+					<section id="projects" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/prj/raspi.jpg" alt="raspberry pi" /></div><div class="content">
+								<h2>raspberry-born [2021]</h2>
+								<p>Collection of scripts & step-by-step instructions for a Raspberry Pi based OpenVPN server & network ad blocker.<br />
+								Chapters also include:<br />
+								- environment monitor (temperature / humidity)<br />
+								- terminal customisation (oh-my-zsh)<br />
+								- two-factor ssh authentication<br />
+								- dynamic DNS update<br />
+								- more</p>
+								<p>
+									<ul class="icons">
+										<li><a href="https://github.com/smyrnakis/raspberry-born" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									</ul>
+								</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/prj/beeHive.jpg" alt="beehive system" /></div><div class="content">
+								<h2>beeHive system [2019]</h2>
+								<p>A remote beehive surveillance system, monitoring honey production (weight) and ambient environment (temperature & humidity).<br />
+								The system can connect to the Internet using WiFi or GPRS. The data is uploaded to ThingSpeak IoT platform and can also be sent to the apiarist over an SMS.</p>
+								<p><i>In collaboration with <a href="https://github.com/nickap" target="_blank">@nickap</a>.</i></p>
+								<p>
+									<ul class="icons">
+										<li><a href="https://github.com/smyrnakis/beeHiveSystem" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									</ul>
+								</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/prj/balcony-automation.jpg" alt="balcony automation" /></div><div class="content">
+								<h2>Balcony automation [2016]</h2>
+								<p>A controller for two balcony lamps and for plants watering valve. Based on a Microchip PIC Microcontroller and on a Maxim DS1307 Real Time Clock (RTC).<br />
+									It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the DS1307 EEPROM and are battery-protected.<br />
+									The control of the lamps is based on real time, the ambient brightness and the signal of a PIR movement sensor. Watering system depends on day/time, as well as on the season of the year.A controller for two balcony lamps and for plants watering. Based on a Microchip PIC Micro-controller and on a Maxim DS1307 RTC. It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the DS1307 EEPROM and are battery-protected. The control of the lamps is based on real time, the ambient brightness and the signal of a PIR Sensor. Watering system depends on day/time, as well as on the season.
+								</p>
+								<p>
+									<ul class="icons">
+										<li><a href="https://www.facebook.com/media/set/?set=a.10201540874423144&type=3" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									</ul>
+								</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/prj/tasks-timer.jpg" alt="tasks timer" /></div><div class="content">
+								<h2>Tasks Timer [2014]</h2>
+								<p>A Microchip PIC16F887 & DS1307 based system measuring elapsed time for up to ten different tasks. It features alarm, chimes, and a countdown timer. Brown-out & black-out detection and automatic data saving in EEPROM.</p>
+								<p>
+									<ul class="icons">
+										<li><a href="https://github.com/smyrnakis/tasks-timer" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://photos.app.goo.gl/CAsM7wUpYyNSh1dz8" target="_blank" class="icon brands fa-google"><span class="label">Google Photos</span></a></li>
+									</ul>
+								</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/prj/psu.jpg" alt="power supply unit" /></div><div class="content">
+								<h2>Symmetrical PSU [2014]</h2>
+								<p>Adjustable symmetrical Power Supply Unit, with voltage and current indication.<br />
+									It features over-current and short-circuit protection.<br />
+									Voltage output: ± 1.2V to 20V DC. Current output: 1A max</p>
+								<p>
+									<ul class="icons">
+										<li><a href="https://www.facebook.com/media/set/?set=a.10203128290667558&type=3" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									</ul>
+								</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- contact -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Comment or request?</h2>
+								<p>Do you have a comment on my work? Do you want to request a custom-made project for your needs?<br />
+								Contact me!</p>
+							</header>
+							<ul class="actions stacked">
+								<!-- <li><a href="#" class="button fit primary">Button</a></li> -->
+								<li><p></p></li>
+								<li><a href="mailto:me@smyrnakis.info" class="button fit">EMAIL ME</a></li>
+							</ul>
+						</div>
+					</section>
+
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Apostolos Smyrnakis</span>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/apostolossmyrnakis/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/smyrnakis/" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.instagram.com/apo_smy/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="mailto:me@smyrnakis.info" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							&copy; Apostolos Smyrnakis<br />
+							Background photo: <i>Le phare</i> &copy; <a href="https://www.instagram.com/nikos_hx/" target="_blank">Nikos Nikolaou</a><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						</ul>
 					</footer>
 
 			</div>
-		</div>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script>
-			window.onload = function() { document.body.className = ''; }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
