@@ -9,7 +9,7 @@
 		<title>Apostolos Smyrnakis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="I am a Computer Systems Engineer, experienced on Windows Systems Administration. Raspberry Pi and Arduino are my hobbies: check my projects on this website.">
+		<meta name="description" content="I am a Computer Systems Engineer, experienced on Windows Systems Administration. Raspberry Pi, Arduino and IoT are my hobbies: check my projects on this website.">
     	<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -84,24 +84,26 @@
 				<!-- projects -->
 					<section id="projects" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/prj/raspi.jpg" alt="raspberry pi" /></div><div class="content">
+							<div class="image"><img src="images/prj/raspi.jpg" alt="raspberry pi" class="grow" /></div><div class="content">
 								<h2>raspberry-born [2021]</h2>
 								<p>Collection of scripts & step-by-step instructions for a Raspberry Pi based OpenVPN server & network ad blocker.<br />
-								Chapters also include:<br />
-								- environment monitor (temperature / humidity)<br />
+								Chapters also include instructions for:<br />
+								- environment monitor (temperature / humidity) & upload to <a href="https://thingspeak.com/" target="_blank">ThingSpeak</a><br />
 								- terminal customisation (oh-my-zsh)<br />
+								- automatic & manual microSD backup<br />
 								- two-factor ssh authentication<br />
 								- dynamic DNS update<br />
 								- more</p>
 								<p>
 									<ul class="icons">
 										<li><a href="https://github.com/smyrnakis/raspberry-born" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://thingspeak.com/channels/1307817" target="_blank" class="icon solid fa-cloud"><span class="label">ThingSpeak</span></a></li>
 									</ul>
 								</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/prj/beeHive.jpg" alt="beehive system" /></div><div class="content">
+							<div class="image"><img src="images/prj/beeHive.jpg" alt="beehive system" class="grow" /></div><div class="content">
 								<h2>beeHive system [2019]</h2>
 								<p>A remote beehive surveillance system, monitoring honey production (weight) and ambient environment (temperature & humidity).<br />
 								The system can connect to the Internet using WiFi or GPRS. The data is uploaded to ThingSpeak IoT platform and can also be sent to the apiarist over an SMS.</p>
@@ -114,11 +116,11 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/prj/balcony-automation.jpg" alt="balcony automation" /></div><div class="content">
+							<div class="image"><img src="images/prj/balcony-automation.jpg" alt="balcony automation" class="grow" /></div><div class="content">
 								<h2>Balcony automation [2016]</h2>
 								<p>A controller for two balcony lamps and for plants watering valve. Based on a Microchip PIC Microcontroller and on a Maxim DS1307 Real Time Clock (RTC).<br />
-									It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the DS1307 EEPROM and are battery-protected.<br />
-									The control of the lamps is based on real time, the ambient brightness and the signal of a PIR movement sensor. Watering system depends on day/time, as well as on the season of the year.A controller for two balcony lamps and for plants watering. Based on a Microchip PIC Micro-controller and on a Maxim DS1307 RTC. It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the DS1307 EEPROM and are battery-protected. The control of the lamps is based on real time, the ambient brightness and the signal of a PIR Sensor. Watering system depends on day/time, as well as on the season.
+									It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the EEPROM of DS1307, which is battery-protected.<br />
+									The control of the lamps is based on real time, the ambient brightness and the signal of a PIR movement sensor.<br />Watering system depends on day/time, as well as on the season of the year.
 								</p>
 								<p>
 									<ul class="icons">
@@ -128,9 +130,12 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/prj/tasks-timer.jpg" alt="tasks timer" /></div><div class="content">
+							<div class="image"><img src="images/prj/tasks-timer.jpg" alt="tasks timer" class="grow" /></div><div class="content">
 								<h2>Tasks Timer [2014]</h2>
-								<p>A Microchip PIC16F887 & DS1307 based system measuring elapsed time for up to ten different tasks. It features alarm, chimes, and a countdown timer. Brown-out & black-out detection and automatic data saving in EEPROM.</p>
+								<p>A Microchip PIC16F887 & DS1307 based system measuring elapsed time for up to ten different tasks. It features alarm, chimes, and a countdown timer, all controlled from a menu.<br />
+									The circuit is designed in a "sandwich" format, allowing easy upgrade or modules change. Battery layer can be added, which features a LiPo battery with charger and voltage regulator.<br />
+									When system operates on external power, brown-out & black-out events are detected and trigger data saving in EEPROM. Data can load automatically on startup (continue where it left).
+								</p>
 								<p>
 									<ul class="icons">
 										<li><a href="https://github.com/smyrnakis/tasks-timer" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -140,11 +145,11 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/prj/psu.jpg" alt="power supply unit" /></div><div class="content">
+							<div class="image"><img src="images/prj/psu.jpg" alt="power supply unit" class="grow" /></div><div class="content">
 								<h2>Symmetrical PSU [2014]</h2>
 								<p>Adjustable symmetrical Power Supply Unit, with voltage and current indication.<br />
 									It features over-current and short-circuit protection.<br />
-									Voltage output: ± 1.2V to 20V DC. Current output: 1A max</p>
+									Voltage output: ±1.2V to ±20V DC. Current output: 1A max (per channel)</p>
 								<p>
 									<ul class="icons">
 										<li><a href="https://www.facebook.com/media/set/?set=a.10203128290667558&type=3" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
