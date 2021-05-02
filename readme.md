@@ -2,7 +2,11 @@
 
 My personal website.
 
-Branch 'detailed' : new version of 2021.
+Branch 'oldTemplate' : template used until 1/5/2021.
+Branch 'newTemplate' : new version as of 1/5/2021.
+
+Keep branches updated. Develop in a new branch and merge with master for
+production.
 
 ---
 
