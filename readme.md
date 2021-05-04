@@ -3,10 +3,22 @@
 My personal website.
 
 Branch 'oldTemplate' : template used until 1/5/2021.
+
 Branch 'newTemplate' : new version as of 1/5/2021.
 
-Keep branches updated. Develop in a new branch and merge with master for
-production.
+Brach 'career-fix'   : fixing career section view
+
+### Logo slider
+
+https://codepen.io/mdashikar/pen/VWPvgE
+
+https://www.codingflicks.com/2020/07/responsive-infinite-client-logo-carousel-slider.html
+
+https://bbbootstrap.com/snippets/clients-brand-logo-carousel-slider-20683486
+
+https://stackoverflow.com/questions/38604929/how-to-create-marquee-infinite-loop-of-logos-slider-with-css-only
+
+<br>
 
 ---
 
