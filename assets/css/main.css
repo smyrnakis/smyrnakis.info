@@ -2089,6 +2089,14 @@ input, select, textarea {
 			color: #76ddff;
 		}
 
+		.grow { 
+			transition: all .2s ease-in-out; 
+		}
+			
+		.grow:hover { 
+			transform: scale(1.2); 
+		}
+
 /* Image */
 
 	.image {
