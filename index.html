@@ -5,6 +5,37 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	<style>
+		.img-container {
+			width: 20%;
+			height: auto;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		.img-container:hover img {
+			transform: scale(1.3);
+		}
+		
+		.img-container img {
+			width: 100%;
+			height: auto;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		.img-container .img-second {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+		
+		.img-container:hover .img-second {
+			opacity: 1;
+		}
+	</style>
 	<head>
 		<title>Apostolos Smyrnakis</title>
 		<meta charset="utf-8" />
@@ -40,6 +71,7 @@
 										<li><a href="#banner" class="more scrolly">Home</a></li>
 										<li><a href="#about" class="more scrolly">About</a></li>
 										<li><a href="#career" class="more scrolly">Career</a></li>
+										<li><a href="#books" class="more scrolly">Books</a></li>
 										<li><a href="#projects" class="more scrolly">Projects</a></li>
 										<li><a href="#cta" class="more scrolly">Contact</a></li>
 									</ul>
@@ -53,7 +85,9 @@
 				<section id="banner">
 					<div class="inner">
 						<h2>Apostolos  Smyrnakis</h2>
-						<p>BSc Computer Systems Engineering</p>
+						<h3>Customer Success Manager</h3>
+						<h4>BSc Computer Systems Engineering</h4>
+						<!-- <p>BSc Computer Systems Engineering</p> -->
 						<br />
 						<!-- <ul class="actions special">
 							<li><a href="#" class="button primary">Button</a></li>
@@ -75,6 +109,7 @@
 							<br />
 							<div style="text-align:center">
 								<a href="#career" class="button more scrolly">Career</a>
+								<a href="#books" class="button more scrolly">Books</a>
 								<a href="#projects" class="button more scrolly">Projects</a>
 								<a href="#cta" class="button more scrolly">Connect</a>
 							</div>
@@ -96,10 +131,11 @@
 								<li>Leading the evalink <b>Documentation project</b>, supervising technical writing team and setting up review processes</li>
 								<li>Designing & creating on-site and remote <b>modular training sessions</b> on the evalink ecosystem for clients and colleagues</li>
 								<li><b>Creating</b> self-learning material, API documentation examples, and UI-based guided tours for new and advanced customers</li>
-								<li>Architecting integrations with 3rd-party systems and frameworks through APIs and SDKs within the <b>AWS Ecosystem</b></li>
+								<li><b>Designing</b> & <b>driving</b> Proof of Concepts, migrations and onboarding of key-customers into the evalink ecosystem</li>
 								<li>Creating workflows within the <b>evalink ecosystem</b> to support our customers' business models</li>
-								<li><b>Onboarding and advising</b> our re-selling partners to deliver the best customer experience on Sitasys products</li>
+								<li><b>Onboarding & advising</b> our re-selling partners to deliver the best customer experience on Sitasys products</li>
 								<li>Using the provided feedback and requirements collected from customers and partners to <b>improve Sitasys products and services</b></li>
+								<li>Architecting integrations with 3rd-party systems and frameworks through APIs and SDKs within the <b>AWS Ecosystem</b></li>
 							</p>
 							<br />
 							<br />
@@ -133,6 +169,62 @@
 								&ThickSpace; &ThickSpace; &Tab; > Remote cabin evacuation system
 							</p>
 						</section>
+					</div>
+				</section>
+
+				<!-- books -->
+				<section id="books" class="wrapper style3">
+					<div class="inner">
+						<header>
+							<h2>BOOKS</h2>
+						</header>	
+							<section>
+								<div class="img-container">
+									<img src="images/books/economicsInMinutes.jpg" alt="economics in minutes cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="economics in minutes cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/superintelligence.jpg" alt="superintelligence cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="superintelligence cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/theEntepreneurMind.jpg" alt="the entrepreneur mind cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="the entrepreneur mind cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/thinkingFastAndSlow.jpg" alt="thinking fast and slow cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="thinking fast and slow cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/startWithWhy.jpeg" alt="start with why cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="start with why cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/theShockDoctrine.jpeg" alt="the shock doctrine cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="the shock doctrine cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/exhalation.jpeg" alt="exhalation cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="exhalation cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/range.jpg" alt="range cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="range cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/howNotToBeWrong.webp" alt="how not to be wrong cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="how not to be wrong cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/theBlackSwan.jpg" alt="the black swan cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="the black swan cover"> -->
+								</div>
+								<div class="img-container">
+									<img src="images/books/theChangingWorldOrder.jpg" alt="the changing world order cover">
+									<!-- <img class="img-second" src="images/books/range.jpg" alt="the changing world order cover"> -->
+								</div>
+							</section>
+						<!-- </header> -->
 					</div>
 				</section>
 
