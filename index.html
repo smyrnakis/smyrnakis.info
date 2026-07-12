@@ -49,9 +49,15 @@
 
 		/* fixed full-page lighthouse background + readability overlay */
 		.bg-fixed{position:fixed;inset:0;z-index:-2;background:url("images/banner.webp") center/cover no-repeat}
+		@media (max-width: 640px){
+		  .bg-fixed{ background-position: 32% 20%; }   /* frame the lighthouse — tune these two numbers */
+		}
 		.bg-overlay{position:fixed;inset:0;z-index:-1;
 			background:radial-gradient(135% 95% at 50% -12%,
 				rgba(40,49,58,0.66) 0%, rgba(40,49,58,0.88) 52%, rgba(40,49,58,0.93) 100%)}
+		@media (max-width: 640px){
+		  .bg-overlay{ background: linear-gradient(180deg, rgba(40,49,58,0.55), rgba(40,49,58,0.9) 70%); }
+		}
 
 		/* layout primitives — HORIZONTAL padding only here */
 		.wrap{max-width:var(--maxw);margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
