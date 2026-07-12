@@ -1,367 +1,634 @@
-<!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Apostolos Smyrnakis</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Apostolos Smyrnakis — Technical Customer Success & Solutions Engineer in Geneva. SaaS onboarding, migrations, API integrations, technical enablement, plus hands-on software, AI and electronics projects." />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8L7FHN64W6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-8L7FHN64W6');
+	</script>
+
 	<style>
-		.img-container {
-			width: 20%;
-			height: auto;
-			display: inline-block;
-			position: relative;
-			overflow: hidden;
-			transition: all 0.3s ease-in-out;
+		/* -----------------------------------------------------------
+		   smyrnakis.info — dark identity over the "Le phare" photo.
+		   Note: .wrap sets HORIZONTAL padding only (longhand); vertical
+		   spacing is set separately, so the two never cancel out.
+		------------------------------------------------------------ */
+		:root{
+			--bg:#2e3842;
+			--bg-2:#28313a;
+			--bg-3:#222a32;
+			--ink:#f5f8f9;
+			--muted:rgba(238,244,246,0.64);
+			--faint:rgba(238,244,246,0.42);
+			--line:rgba(255,255,255,0.10);
+			--line-2:rgba(255,255,255,0.17);
+			--teal:#21b2a6;
+			--teal-bright:#3ad6c4;
+			--teal-dim:rgba(33,178,166,0.15);
+			--radius:14px;
+			--maxw:1080px;
+			--section-y:50px;   /* <-- distance between sections. Lower = tighter, higher = airier. */
+			--nav-h:60px;
+			--sans:'Open Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+			color-scheme:dark;
 		}
-		
-		.img-container:hover img {
-			transform: scale(1.3);
+		*{box-sizing:border-box}
+		html{scroll-behavior:smooth}
+		body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+			font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+		a{color:inherit;text-decoration:none}
+		img{max-width:100%}
+
+		/* fixed full-page lighthouse background + readability overlay */
+		.bg-fixed{position:fixed;inset:0;z-index:-2;background:url("images/banner.webp") center/cover no-repeat}
+		.bg-overlay{position:fixed;inset:0;z-index:-1;
+			background:radial-gradient(135% 95% at 50% -12%,
+				rgba(40,49,58,0.66) 0%, rgba(40,49,58,0.88) 52%, rgba(40,49,58,0.93) 100%)}
+
+		/* layout primitives — HORIZONTAL padding only here */
+		.wrap{max-width:var(--maxw);margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+		/* VERTICAL rhythm — one knob (--section-y) controls every gap */
+		section{padding-top:var(--section-y);padding-bottom:var(--section-y)}
+		section[id], header[id]{scroll-margin-top:76px}
+
+		h1,h2,h3{text-shadow:0 1px 20px rgba(0,0,0,0.28)}
+		.eyebrow{font-size:0.72rem;letter-spacing:0.24em;text-transform:uppercase;
+			color:var(--teal-bright);font-weight:700;margin:0 0 14px}
+		h2.sec{font-size:clamp(1.5rem,3.4vw,2.05rem);line-height:1.15;margin:0 0 6px;
+			font-weight:800;letter-spacing:-0.01em}
+		.sec-sub{color:var(--muted);max-width:60ch;margin:0 0 34px}
+
+		/* nav — sticky on desktop, static on mobile, no brand mark */
+		nav.bar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+			background:rgba(40,49,58,0.72);border-bottom:1px solid var(--line)}
+		nav.bar .wrap{display:flex;align-items:center;justify-content:center;height:var(--nav-h)}
+		.links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+		.links a{font-size:0.86rem;color:var(--muted);letter-spacing:0.03em}
+		.links a:hover{color:var(--ink)}
+
+		/* hero — vertical padding is longhand so .wrap horizontal survives */
+		.hero{text-align:center;padding-top:100px;padding-bottom:66px}
+		.hero .status{display:inline-flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--muted);
+			border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;margin-bottom:26px;
+			background:rgba(40,49,58,0.35)}
+		.dot{width:8px;height:8px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 4px var(--teal-dim)}
+		.hero h1{font-size:clamp(2.4rem,6.4vw,3.7rem);line-height:1.02;margin:0 0 16px;
+			font-weight:800;letter-spacing:-0.02em}
+		.hero .role{font-size:clamp(1rem,2.4vw,1.28rem);color:var(--teal-bright);font-weight:600;
+			letter-spacing:0.01em;margin:0 0 10px}
+		.hero .meta{color:var(--ink);opacity:0.9;font-size:0.98rem;margin:0 auto 30px;max-width:54ch}
+		.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+		.btn{display:inline-flex;align-items:center;gap:9px;font-size:0.9rem;font-weight:600;
+			padding:12px 22px;border-radius:999px;letter-spacing:0.02em;
+			transition:transform .15s,background .15s,border-color .15s}
+		.btn.primary{background:var(--teal);color:#08201d}
+		.btn.primary:hover{background:var(--teal-bright);transform:translateY(-2px)}
+		.btn.ghost{border:1px solid var(--line-2);color:var(--ink);background:rgba(40,49,58,0.3)}
+		.btn.ghost:hover{border-color:var(--teal);transform:translateY(-2px)}
+
+		/* impact band — hugs the hero above, normal gap below */
+		.impact{padding-top:24px;padding-bottom:var(--section-y)}
+		.impact .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+			border:1px solid var(--line);border-radius:var(--radius);
+			background:linear-gradient(180deg,rgba(20,26,31,0.55),rgba(20,26,31,0.28));
+			backdrop-filter:blur(4px);padding:28px 18px}
+		.stat{text-align:center;padding:6px}
+		.stat .num{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:800;color:var(--teal-bright);
+			line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+		.stat .lbl{font-size:0.78rem;color:var(--muted);margin-top:10px;letter-spacing:0.02em;line-height:1.35}
+		@media(max-width:720px){.impact .grid{grid-template-columns:repeat(2,1fr);row-gap:26px}}
+
+		/* about */
+		.about-grid{display:grid;grid-template-columns:170px 1fr;gap:36px;align-items:center}
+		.avatar{width:170px;height:170px;border-radius:20px;overflow:hidden;
+			box-shadow:0 16px 40px rgba(0,0,0,0.4);background:var(--bg-3)}
+		.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+		.about-copy p{margin:0 0 14px}
+		.about-copy p:last-child{margin:0}
+		@media(max-width:640px){.about-grid{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+		/* career timeline */
+		.timeline{margin-top:8px}
+		.job{position:relative;padding:0 0 34px 30px;border-left:2px solid var(--line)}
+		.job:last-child{padding-bottom:0}
+		.job::before{content:"";position:absolute;left:-11px;top:4px;width:14px;height:14px;border-radius:50%;
+			background:var(--bg);border:3px solid var(--teal)}
+		.job:first-child::before{background:var(--teal);box-shadow:0 0 0 5px var(--teal-dim)}
+		.job h3{margin:0;font-size:1.12rem;font-weight:700}
+		.job .co{font-size:0.9rem;font-weight:600;margin:3px 0 2px;color:var(--muted)}
+		.job .co a{color:var(--teal-bright);border-bottom:1px solid transparent;transition:border-color .15s}
+		.job .co a:hover{border-color:var(--teal-bright)}
+		.job .when{color:var(--faint);font-size:0.8rem;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:12px}
+		.job ul{margin:0;padding-left:18px;color:var(--muted);font-size:0.92rem}
+		.job ul li{margin-bottom:6px}
+		.job ul li b{color:var(--ink);font-weight:600}
+
+		/* skills — every chip identical */
+		.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+		@media(max-width:720px){.skills{grid-template-columns:1fr}}
+		.skillcard{border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px;
+			background:rgba(20,26,31,0.4);backdrop-filter:blur(3px)}
+		.skillcard h4{margin:0 0 13px;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint)}
+		.chips{display:flex;flex-wrap:wrap;gap:8px}
+		.chip{font-size:0.8rem;padding:6px 12px;border-radius:999px;color:var(--ink);
+			background:var(--teal-dim);border:1px solid rgba(33,178,166,0.35)}
+
+		/* projects */
+		.grouplbl{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);margin:0 0 16px}
+		.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:34px}
+		.cards:last-child{margin-bottom:0}
+		@media(max-width:860px){.cards{grid-template-columns:repeat(2,1fr)}}
+		@media(max-width:560px){.cards{grid-template-columns:1fr}}
+		/* the whole card is a link (see .card .repo::after below); the lift is the click affordance */
+		.card{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg-2);
+			display:flex;flex-direction:column;transition:transform .18s,border-color .18s,box-shadow .18s}
+		.card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 40px rgba(0,0,0,0.4)}
+		.card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg-3)}
+		.card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+		.card:hover .thumb img{transform:scale(1.05)}
+		.card .thumb.ph{display:grid;place-items:center;align-content:center;gap:9px;
+			background:linear-gradient(140deg,#2c3b43,#222a32)}
+		.card .thumb.ph svg{width:34px;height:34px;stroke:var(--teal-bright);fill:none;stroke-width:1.6}
+		.ph-note{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint)}
+		/* NEW ribbon — add class "new" to any .card to show it, remove it to hide it */
+		.card.new .thumb::after{content:"NEW";position:absolute;top:10px;right:10px;font-size:0.6rem;font-weight:800;
+			letter-spacing:0.12em;background:var(--teal);color:#08201d;padding:3px 8px;border-radius:6px;z-index:2}
+		.card .body{padding:16px 16px 15px;display:flex;flex-direction:column;flex:1}
+		.card h4{margin:0 0 3px;font-size:1rem;font-weight:700}
+		.card .yr{color:var(--faint);font-size:0.74rem;letter-spacing:0.04em;margin-bottom:9px}
+		.card p{margin:0 0 14px;font-size:0.85rem;color:var(--muted);flex:1}
+		.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+		.card .tag{font-size:0.68rem;color:var(--faint);border:1px solid var(--line);border-radius:6px;padding:3px 7px}
+		.card .repo{display:inline-flex;align-items:center;gap:7px;font-size:0.82rem;color:var(--teal-bright);font-weight:600}
+		.card .repo:hover{color:var(--teal)}
+		/* stretch the repo link across the whole card so a click anywhere opens it */
+		.card .repo::after{content:"";position:absolute;inset:0;z-index:1}
+		.icon{width:15px;height:15px;fill:currentColor;flex:none}
+
+		/* books — horizontal shelf, drag + gentle auto-scroll + edge arrows */
+		.shelf-wrap{position:relative}
+		.shelf{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;padding:6px 2px 16px;
+			cursor:grab;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.25) transparent}
+		.shelf::-webkit-scrollbar{height:7px}
+		.shelf::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.22);border-radius:99px}
+		.shelf.dragging{cursor:grabbing}
+		.shelf.dragging .book{pointer-events:none}
+		.book{flex:0 0 120px;width:120px;aspect-ratio:2/3;
+			border-radius:6px;overflow:hidden;border:1px solid var(--line);position:relative;
+			background:var(--bg-3);transition:transform .18s,box-shadow .18s}
+		.book img{width:100%;height:100%;object-fit:cover;display:block}
+		.book:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,0.45)}
+		.fade{position:absolute;top:0;bottom:16px;width:52px;pointer-events:none;z-index:2}
+		.fade.l{left:0;background:linear-gradient(90deg,rgba(38,47,56,0.95),transparent)}
+		.fade.r{right:0;background:linear-gradient(270deg,rgba(38,47,56,0.95),transparent)}
+		.shelf-nav{position:absolute;top:calc(50% - 8px);transform:translateY(-50%);z-index:3;
+			width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+			border:1px solid var(--line-2);background:rgba(30,37,45,0.92);backdrop-filter:blur(6px);
+			color:var(--ink);cursor:pointer;transition:opacity .2s,background .15s,border-color .15s,color .15s}
+		.shelf-nav:hover{background:rgba(30,37,45,1);border-color:var(--teal);color:var(--teal-bright)}
+		.shelf-nav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2}
+		.shelf-nav.prev{left:-4px}
+		.shelf-nav.next{right:-4px}
+		.shelf-nav.at-bound{opacity:0.28}   /* dim at the ends, but still clickable */
+		.aff-note{margin-top:14px;font-size:0.72rem;color:var(--faint);display:flex;align-items:center;gap:6px}
+		.aff-note b{color:var(--muted);font-weight:600}
+
+		/* contact */
+		.contact{text-align:center}
+		.contact .btn{margin-top:6px}
+		.social{display:flex;gap:14px;justify-content:center;margin-top:30px}
+		.social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+			border:1px solid var(--line-2);color:var(--muted);transition:all .15s;background:rgba(40,49,58,0.3)}
+		.social a:hover{color:var(--teal-bright);border-color:var(--teal);transform:translateY(-3px)}
+		.social .icon{width:18px;height:18px}
+
+		footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--faint);font-size:0.8rem}
+		footer a{color:var(--muted)}
+
+		/* back-to-top */
+		.to-top{position:fixed;right:22px;bottom:22px;z-index:55;width:44px;height:44px;border-radius:50%;
+			display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(40,49,58,0.82);
+			backdrop-filter:blur(6px);color:var(--ink);cursor:pointer;opacity:0;transform:translateY(12px);
+			pointer-events:none;transition:opacity .25s,transform .25s,border-color .15s,color .15s}
+		.to-top.show{opacity:1;transform:none;pointer-events:auto}
+		.to-top:hover{border-color:var(--teal);color:var(--teal-bright)}
+		.to-top svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+
+		/* mobile: nav non-sticky + tighter rhythm (one knob again) */
+		@media(max-width:720px){
+			nav.bar{position:static;backdrop-filter:none;background:rgba(40,49,58,0.5)}
+			nav.bar .wrap{height:auto;padding-top:12px;padding-bottom:12px}
+			.links{gap:14px 18px;flex-wrap:wrap;font-size:0.8rem}
 		}
-		
-		.img-container img {
-			width: 100%;
-			height: auto;
-			transition: all 0.3s ease-in-out;
+		@media(max-width:640px){
+			:root{--section-y:44px}
+			.impact{padding-top:20px}
 		}
-		
-		.img-container .img-second {
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-		}
-		
-		.img-container:hover .img-second {
-			opacity: 1;
-		}
+		@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 	</style>
-	<head>
-		<title>Apostolos Smyrnakis</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="I am a Computer Systems Engineer, experienced on Windows Systems Administration. Raspberry Pi, Arduino and IoT are my hobbies: check my projects on this website.">
-    	<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-8L7FHN64W6"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+	<div class="bg-fixed"></div>
+	<div class="bg-overlay"></div>
 
-			gtag('config', 'G-8L7FHN64W6');
-		</script>
-	</head>
-	<body class="landing is-preload">
+	<nav class="bar">
+		<div class="wrap">
+			<ul class="links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#career">Career</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#books">Books</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+	<!-- HERO -->
+	<header class="hero wrap" id="top">
+		<div class="status"><span class="dot"></span> Geneva, CH · open to conversations</div>
+		<h1>Apostolos Smyrnakis</h1>
+		<p class="role">Technical Customer Success · Solutions Engineer</p>
+		<p class="meta">I turn complex technical requirements into adoption, growth, and calm rollouts — for enterprise SaaS customers across EMEA &amp; APAC.</p>
+		<div class="cta">
+			<a href="#projects" class="btn primary">View projects</a>
+			<a href="#contact" class="btn ghost">Get in touch</a>
+		</div>
+	</header>
 
-				<!-- Header -->
-				<header id="header" class="alt">
-					<h1><a href="index.html">Apostolos Smyrnakis</a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="special">
-								<a href="#menu" class="menuToggle"><span>Menu</span></a>
-								<div id="menu">
-									<ul>
-										<li><a href="#banner" class="more scrolly">Home</a></li>
-										<li><a href="#about" class="more scrolly">About</a></li>
-										<li><a href="#career" class="more scrolly">Career</a></li>
-										<li><a href="#books" class="more scrolly">Books</a></li>
-										<li><a href="#projects" class="more scrolly">Projects</a></li>
-										<li><a href="#cta" class="more scrolly">Contact</a></li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</nav>
-				</header>
+	<!-- IMPACT -->
+	<section class="impact wrap" aria-label="Impact in numbers">
+		<div class="grid">
+			<div class="stat"><div class="num" data-to="36000" data-sep="1">0</div><div class="lbl">CERN accounts<br>migrated</div></div>
+			<div class="stat"><div class="num" data-to="100" data-suf="+">0</div><div class="lbl">reusable delivery<br>assets built</div></div>
+			<div class="stat"><div class="num" data-to="25" data-suf="+">0</div><div class="lbl">enterprise<br>onboardings led</div></div>
+			<div class="stat"><div class="num" data-to="500" data-suf="+">0</div><div class="lbl">support tickets<br>resolved</div></div>
+		</div>
+	</section>
 
-				<!-- Banner -->
-				<section id="banner">
-					<div class="inner">
-						<h2>Apostolos  Smyrnakis</h2>
-						<h3>Customer Success Manager</h3>
-						<h4>BSc Computer Systems Engineering</h4>
-						<!-- <p>BSc Computer Systems Engineering</p> -->
-						<br />
-						<!-- <ul class="actions special">
-							<li><a href="#" class="button primary">Button</a></li>
-						</ul> -->
-					</div>
-					<a href="#about" class="more scrolly">Learn More</a>
-				</section>
-
-				<!-- about -->
-				<section id="about" class="wrapper style1 special">
-					<div class="inner">
-						<header class="major">
-							<h2>Who am I?</h2>
-						</header>
-						<p>
-							<span class="image left"><img src="images/me_small.png" alt="Apostolos picture" /></span>
-							Hi! I'm Apostolos, a customer-focused professional with a passion for technology and career advancement. As a Customer Success Manager, I lead the Documentation project and provide training to clients and colleagues, leveraging my clear communication skills and diverse background.<br />
-							<br />With experience in Windows Systems Administration, software development, and electronics engineering, I bring a well-rounded skill set to the table.<br>I view every opportunity as a chance to learn and grow, and I enjoy tackling complex problems and finding innovative solutions.<br />
-							<br />
-							<div style="text-align:center">
-								<a href="#career" class="button more scrolly">Career</a>
-								<a href="#books" class="button more scrolly">Books</a>
-								<a href="#projects" class="button more scrolly">Projects</a>
-								<a href="#cta" class="button more scrolly">Connect</a>
-							</div>
-						</p>
-					</div>
-				</section>
-
-				<!-- career -->
-				<section id="career" class="wrapper style5">
-					<div class="inner">
-						<section>
-							<h3>Career</h3>
-							<header>
-								<h4>Customer Success Manager</h4>
-								<p>September 2021 - today  @  <a href="https://sitasys.com" target="_blank">Sitasys</a> - Geneva, CH</p>
-							</header>
-							<p>
-								<span class="image left"><img src="images/logos/sitasys.png" alt="sitasys logo" /></span>
-								<li>Leading the evalink <b>Documentation project</b>, supervising technical writing team and setting up review processes</li>
-								<li>Designing & creating on-site and remote <b>modular training sessions</b> on the evalink ecosystem for clients and colleagues</li>
-								<li><b>Creating</b> self-learning material, API documentation examples, and UI-based guided tours for new and advanced customers</li>
-								<li><b>Designing</b> & <b>driving</b> Proof of Concepts, migrations and onboarding of key-customers into the evalink ecosystem</li>
-								<li>Creating workflows within the <b>evalink ecosystem</b> to support our customers' business models</li>
-								<li><b>Onboarding & advising</b> our re-selling partners to deliver the best customer experience on Sitasys products</li>
-								<li>Using the provided feedback and requirements collected from customers and partners to <b>improve Sitasys products and services</b></li>
-								<li>Architecting integrations with 3rd-party systems and frameworks through APIs and SDKs within the <b>AWS Ecosystem</b></li>
-							</p>
-							<br />
-							<br />
-							<header>
-								<h4>Windows Systems Engineer - Software Engineer</h4>
-								<p>February 2017 - April 2021  @  <a href="https://home.cern" target="_blank">CERN, IT Department</a> - Geneva, CH</p>
-							</header>
-							<p>
-								<span class="image left"><img src="images/logos/cern.png" alt="cern logo" /></span>
-								<li>Responsible for development & execution of the Home Folders migration from Microsoft DFS to CERNBox (FOSS enterprise cloud) <b>(36’000 accounts)</b></li>
-								<li>Developing <b>C# GUIs and CLIs</b> (Migration wizard – file collisions handler & Office Users simulator for stress-test</li>
-								<li><b>PowerShell</b> & <b>VBScript</b> scripting for devices configuration, security groups & ACLs handling, automating software installations and REST API calls</li>
-								<li><b>Debian Linux</b> administration & <b>Bash</b> scripting</li>
-								<li>Designed & published DFS to CERNBox migration project's online <b>documentation</b> material and on-site/remote <b>training course</b></li>
-								<li>Member of Windows & Mac 3rd level support lines (more than <b>400 support tickets</b> resolved)</li>
-							</p>
-							<br />
-							<br />
-							<header>
-								<h4>Electronics Engineer - R&D Engineer</h4>
-								<p>June 2013 - May 2015  @  <a href="https://www.pappaslift.gr/?lang=en" target="_blank">Pappas elevators S.A</a> - Aspropyrgos, GR</p>
-							</header>
-							<p>
-								<span class="image left"><img src="images/logos/pappas.png" alt="pappas logo" /></span>
-								
-								<li>Designing & building <b>tester units</b> and <b>testing procedures</b></li>
-								<li><b>Evaluating</b> new components & analysing faulty equipment</li>
-								<li><b>Assembling</b> & <b>testing</b> modular type panel components</li>
-								<li>Designing & building <b>proof-of-concept automations</b>: </li>
-								&ThickSpace; &ThickSpace; &Tab; > Elevator telemetry<p>
-								&ThickSpace; &ThickSpace; &Tab; > Remote cabin evacuation system
-							</p>
-						</section>
-					</div>
-				</section>
-
-				<!-- books -->
-				<section id="books" class="wrapper style3">
-					<div class="inner">
-						<header>
-							<h2>BOOKS</h2>
-						</header>	
-							<section>
-								<div class="img-container">
-									<img src="images/books/economicsInMinutes.webp" alt="economics in minutes cover">
-									<!-- <img class="img-second" src="images/books/economicsInMinutes.webp" alt="economics in minutes cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/superintelligence.webp" alt="superintelligence cover">
-									<!-- <img class="img-second" src="images/books/superintelligence.webp" alt="superintelligence cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/theEntepreneurMind.webp" alt="the entrepreneur mind cover">
-									<!-- <img class="img-second" src="images/books/theEntepreneurMind.webp" alt="the entrepreneur mind cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/thinkingFastAndSlow.webp" alt="thinking fast and slow cover">
-									<!-- <img class="img-second" src="images/books/thinkingFastAndSlow.webp" alt="thinking fast and slow cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/startWithWhy.webp" alt="start with why cover">
-									<!-- <img class="img-second" src="images/books/startWithWhy.webp" alt="start with why cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/theShockDoctrine.webp" alt="the shock doctrine cover">
-									<!-- <img class="img-second" src="images/books/theShockDoctrine.webp" alt="the shock doctrine cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/exhalation.webp" alt="exhalation cover">
-									<!-- <img class="img-second" src="images/books/exhalation.webp" alt="exhalation cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/range.webp" alt="range cover">
-									<!-- <img class="img-second" src="images/books/range.webp" alt="range cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/howNotToBeWrong.webp" alt="how not to be wrong cover">
-									<!-- <img class="img-second" src="images/books/howNotToBeWrong.webp" alt="how not to be wrong cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/theBlackSwan.webp" alt="the black swan cover">
-									<!-- <img class="img-second" src="images/books/theBlackSwan.webp" alt="the black swan cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/theChangingWorldOrder.webp" alt="the changing world order cover">
-									<!-- <img class="img-second" src="images/books/theChangingWorldOrder.webp" alt="the changing world order cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/irrationalLoyalty.webp" alt="irrational loyalty cover">
-									<!-- <img class="img-second" src="images/books/irrationalLoyalty.webp" alt="irrational loyalty cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/brandingIsSex.webp" alt="branding is sex cover">
-									<!-- <img class="img-second" src="images/books/brandingIsSex.webp" alt="branding is sex cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/surroundedByIdiots.webp" alt="surrounded by idiots cover">
-									<!-- <img class="img-second" src="images/books/surroundedByIdiots.webp" alt="surrounded by idiots cover"> -->
-								</div>
-								<div class="img-container">
-									<img src="images/books/theLeanStartup.webp" alt="The Lean Startup sex cover">
-									<!-- <img class="img-second" src="images/books/theLeanStartup.webp" alt="The Lean Startup cover"> -->
-								</div>
-							</section>
-						<!-- </header> -->
-					</div>
-				</section>
-
-				<!-- projects -->
-				<section id="projects" class="wrapper alt style2">
-					<section class="spotlight">
-						<div class="image"><img src="images/prj/raspi.jpg" alt="raspberry pi" class="grow" /></div><div class="content">
-							<h2>raspberry-born [2021]</h2>
-							<p>Collection of scripts & step-by-step instructions for a Raspberry Pi based OpenVPN server & network ad blocker.<br />
-							Chapters also include instructions for:<br />
-							- environment monitor (temperature / humidity) & upload to <a href="https://thingspeak.com/" target="_blank">ThingSpeak</a><br />
-							- terminal customisation (oh-my-zsh)<br />
-							- automatic & manual microSD backup<br />
-							- two-factor ssh authentication<br />
-							- dynamic DNS update<br />
-							- more</p>
-							<p>
-								<ul class="icons">
-									<li><a href="https://github.com/smyrnakis/raspberry-born" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://thingspeak.com/channels/1307817" target="_blank" class="icon solid fa-cloud"><span class="label">ThingSpeak</span></a></li>
-								</ul>
-							</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/prj/beeHive.jpg" alt="beehive system" class="grow" /></div><div class="content">
-							<h2>beeHive system [2019]</h2>
-							<p>A remote beehive surveillance system, monitoring honey production (weight) and ambient environment (temperature & humidity).<br />
-							The system can connect to the Internet using WiFi or GPRS. The data is uploaded to ThingSpeak IoT platform and can also be sent to the apiarist over an SMS.</p>
-							<p><i>In collaboration with <a href="https://github.com/nickap" target="_blank">@nickap</a>.</i></p>
-							<p>
-								<ul class="icons">
-									<li><a href="https://github.com/smyrnakis/beeHiveSystem" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/prj/balcony-automation.jpg" alt="balcony automation" class="grow" /></div><div class="content">
-							<h2>Balcony automation [2016]</h2>
-							<p>A controller for two balcony lamps and for plants watering valve. Based on a Microchip PIC Microcontroller and on a Maxim DS1307 Real Time Clock (RTC).<br />
-								It includes buttons for enabling/disabling the automated operation of the lamps and automatic/continuous plant watering, all with LED indicators. Options and settings are saved to the EEPROM of DS1307, which is battery-protected.<br />
-								The control of the lamps is based on real time, the ambient brightness and the signal of a PIR movement sensor.<br />Watering system depends on day/time, as well as on the season of the year.
-							</p>
-							<p>
-								<ul class="icons">
-									<li><a href="https://www.facebook.com/media/set/?set=a.10201540874423144&type=3" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								</ul>
-							</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/prj/tasks-timer.jpg" alt="tasks timer" class="grow" /></div><div class="content">
-							<h2>Tasks Timer [2014]</h2>
-							<p>A Microchip PIC16F887 & DS1307 based system measuring elapsed time for up to ten different tasks. It features alarm, chimes, and a countdown timer, all controlled from a menu.<br />
-								The circuit is designed in a "sandwich" format, allowing easy upgrade or modules change. Battery layer can be added, which features a LiPo battery with charger and voltage regulator.<br />
-								When system operates on external power, brown-out & black-out events are detected and trigger data saving in EEPROM. Data can load automatically on startup (continue where it left).
-							</p>
-							<p>
-								<ul class="icons">
-									<li><a href="https://github.com/smyrnakis/tasks-timer" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://photos.app.goo.gl/CAsM7wUpYyNSh1dz8" target="_blank" class="icon brands fa-google"><span class="label">Google Photos</span></a></li>
-								</ul>
-							</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/prj/psu.jpg" alt="power supply unit" class="grow" /></div><div class="content">
-							<h2>Symmetrical PSU [2014]</h2>
-							<p>Adjustable symmetrical Power Supply Unit, with voltage and current indication.<br />
-								It features over-current and short-circuit protection.<br />
-								Voltage output: ±1.2V to ±20V DC. Current output: 1A max (per channel)</p>
-							<p>
-								<ul class="icons">
-									<li><a href="https://www.facebook.com/media/set/?set=a.10203128290667558&type=3" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								</ul>
-							</p>
-						</div>
-					</section>
-				</section>
-
-				<!-- contact -->
-				<section id="cta" class="wrapper style4">
-					<div class="inner">
-						<header>
-							<h2>Comment or request?</h2>
-							<p>Do you have a comment on my work? Do you want to request a custom-made project for your needs?<br />
-							Contact me!</p>
-						</header>
-						<ul class="actions stacked">
-							<!-- <li><a href="#" class="button fit primary">Button</a></li> -->
-							<li><p></p></li>
-							<li><a href="mailto:me@smyrnakis.info" class="button fit">EMAIL ME</a></li>
-						</ul>
-					</div>
-				</section>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/apostolossmyrnakis/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/smyrnakis/" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.credly.com/users/apostolos-smyrnakis/badges" target="_blank" class="icon solid fa-medal"><span class="label">Credly</span></a></li>
-						<li><a href="https://www.instagram.com/apo_smy/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="mailto:me@smyrnakis.info" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						&copy; Apostolos Smyrnakis<br />
-						Background photo: <i>Le phare</i> &copy; <a href="https://www.instagram.com/nikos_hx/" target="_blank">Nikos Nikolaou</a><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-					</ul>
-				</footer>
-
+	<!-- ABOUT -->
+	<section id="about" class="wrap">
+		<div class="about-grid">
+			<div class="avatar"><img src="images/me_portrait_small.webp" alt="Apostolos Smyrnakis photo" /></div>
+			<div class="about-copy">
+				<p class="eyebrow" style="margin-bottom:10px">Who I am</p>
+				<p>I'm a customer-facing technical professional who sits between customers, Product, and Engineering — translating pains, adoption blockers, and messy requirements into workflows, training, and shippable outcomes.</p>
+				<p>My background spans software, systems administration, and electronics engineering, which lets me go as deep as the problem needs — from an API integration to a boardroom rollout plan.</p>
 			</div>
+		</div>
+	</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-	</body>
+	<!-- CAREER -->
+	<section id="career" class="wrap">
+		<p class="eyebrow">Career</p>
+		<h2 class="sec">Where I've made an impact</h2>
+		<p class="sec-sub">Across SaaS customer success, enterprise IT, and R&amp;D engineering.</p>
+		<div class="timeline">
+			<div class="job">
+				<h3>Customer Success Manager · Solutions Engineer</h3>
+				<div class="co"><a href="https://sitasys.com" target="_blank" rel="noopener">Sitasys AG</a> — <a href="https://www.evalink.io/" target="_blank" rel="noopener">evalink</a></div>
+				<div class="when">Sep 2021 – present · Geneva, CH</div>
+				<ul>
+					<li>Owned technical advisory and delivery for enterprise customers across <b>EMEA &amp; APAC</b>, bridging Sales, Product, Support, and Engineering.</li>
+					<li>Led <b>~25 onboardings &amp; migrations</b> into the evalink talos ecosystem; drove up to <b>500% yearly growth</b> in alarm connections on managed accounts.</li>
+					<li>Analyzed our in-house <b>LangGraph/Kotlin AI-agent platform</b> and produced technical documentation and commercial enablement material covering architecture, capabilities, use cases, and deployment.</li>
+					<li>Automated mandatory Swiss fire-alarm commissioning — a <b>2-day manual process cut to minutes</b>, adopted by 8 major Swiss players.</li>
+					<li>Built a <b>100+ asset delivery library</b> and a documentation programme from zero.</li>
+				</ul>
+			</div>
+			<div class="job">
+				<h3>Systems &amp; Software Engineer</h3>
+				<div class="co"><a href="https://home.cern/" target="_blank" rel="noopener">CERN</a> — IT Department</div>
+				<div class="when">Feb 2017 – Apr 2021 · Geneva, CH</div>
+				<ul>
+					<li>Built C# / PowerShell / Bash migration tooling for the DFS → CERNBox move across <b>~36,000 accounts</b>.</li>
+					<li>Evangelised adoption with <b>5+ departmental</b> presentations and CERN-wide training material.</li>
+					<li>Windows &amp; macOS 3rd-level support — <b>400+ tickets</b> resolved.</li>
+				</ul>
+			</div>
+			<div class="job">
+				<h3>Electronics Engineer · Junior R&amp;D</h3>
+				<div class="co"><a href="https://www.pappaslift.gr/?lang=en" target="_blank" rel="noopener">Pappas Elevators S.A.</a></div>
+				<div class="when">Jun 2013 – May 2015 · Aspropyrgos, GR</div>
+				<ul>
+					<li>Designed tester units and testing procedures; built proof-of-concept elevator telemetry and remote-evacuation prototypes.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- SKILLS -->
+	<section id="skills" class="wrap">
+		<p class="eyebrow">Toolbox</p>
+		<h2 class="sec">Skills &amp; technologies</h2>
+		<p class="sec-sub">Where customer delivery meets hands-on engineering.</p>
+		<div class="skills">
+			<div class="skillcard">
+				<h4>Solutions &amp; Customer Delivery</h4>
+				<div class="chips">
+					<span class="chip">PoCs</span><span class="chip">Onboarding</span><span class="chip">Migrations</span>
+					<span class="chip">Technical discovery</span><span class="chip">Churn-risk</span><span class="chip">Enablement</span><span class="chip">Training</span>
+				</div>
+			</div>
+			<div class="skillcard">
+				<h4>Integrations, Automation &amp; AI</h4>
+				<div class="chips">
+					<span class="chip">AI Agents</span><span class="chip">REST APIs</span><span class="chip">Python</span><span class="chip">PowerShell</span>
+					<span class="chip">Bash</span><span class="chip">JavaScript</span><span class="chip">YAML</span><span class="chip">n8n</span>
+				</div>
+			</div>
+			<div class="skillcard">
+				<h4>Data &amp; Reporting</h4>
+				<div class="chips">
+					<span class="chip">SQL</span><span class="chip">Grafana</span><span class="chip">Data mapping</span><span class="chip">Reporting templates</span>
+				</div>
+			</div>
+			<div class="skillcard">
+				<h4>Systems &amp; Platforms</h4>
+				<div class="chips">
+					<span class="chip">Windows Server</span><span class="chip">Linux</span><span class="chip">macOS</span>
+					<span class="chip">Active Directory</span><span class="chip">Jira</span><span class="chip">Git</span><span class="chip">Postman</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PROJECTS -->
+	<section id="projects" class="wrap">
+		<p class="eyebrow">Portfolio</p>
+		<h2 class="sec">Projects</h2>
+		<!-- <p class="sec-sub">A mix of AI &amp; software tinkering and hands-on electronics. Click a card to open it.</p> -->
+
+		<p class="grouplbl">Software &amp; Automation</p>
+		<div class="cards">
+			<div class="card new">
+				<!-- <div class="thumb ph">
+					<svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+					<span class="ph-note">artwork to come</span>
+				</div> -->
+				<div class="thumb"><img src="images/prj/friend-lock.webp" alt="friend-lock — coding project" loading="lazy" /></div>
+				<div class="body">
+					<h4>friend-lock</h4>
+					<div class="yr">July 2026</div>
+					<p>A browser tool that locks files with a friend's password you never see — and can't reverse. Offline, single-file; locked files masquerade as ordinary JPEGs.</p>
+					<div class="tags"><span class="tag">JavaScript</span><span class="tag">libsodium</span><span class="tag">Crypto</span></div>
+					<a class="repo" href="https://github.com/smyrnakis/friend-lock" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+				</div>
+			</div>
+			<div class="card new">
+				<!-- <div class="thumb ph">
+					<svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 17h6"/></svg>
+					<span class="ph-note">artwork to come</span>
+				</div> -->
+				<div class="thumb"><img src="images/prj/joplin-notes-agent.webp" alt="joplin-notes-agent — AI Agent project" loading="lazy" /></div>
+				<div class="body">
+					<h4>joplin-notes-agent</h4>
+					<div class="yr">June 2026</div>
+					<p>A privacy-first AI agent for conversational search over a personal Joplin notes archive. Framework-free, with a ReAct reasoning loop — nothing leaves your machine.</p>
+					<div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">AI Agents</span></div>
+					<a class="repo" href="https://github.com/smyrnakis/joplin-notes-agent" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+				</div>
+			</div>
+			<div class="card">
+				<div class="thumb"><img src="images/prj/raspberry-born.webp" alt="raspberry-born — Raspberry Pi project" loading="lazy" /></div>
+				<div class="body">
+					<h4>raspberry-born</h4>
+					<div class="yr">2021 – present</div>
+					<p>Scripts &amp; step-by-step guides for a Raspberry Pi OpenVPN server and network ad-blocker, with backups, 2FA SSH, and dynamic DNS.</p>
+					<div class="tags"><span class="tag">Raspberry Pi</span><span class="tag">Bash</span><span class="tag">Linux</span></div>
+					<a class="repo" href="https://github.com/smyrnakis/raspberry-born" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+				</div>
+			</div>
+		</div>
+
+		<p class="grouplbl">Electronics &amp; Hardware</p>
+		<div class="cards">
+			<div class="card">
+				<div class="thumb"><img src="images/prj/beeHive.webp" alt="beeHive system" loading="lazy" /></div>
+				<div class="body">
+					<h4>beeHive system</h4>
+					<div class="yr">2019</div>
+					<p>Remote beehive surveillance — honey-production weight and ambient climate, uploaded over WiFi/GPRS with SMS alerts.</p>
+					<div class="tags"><span class="tag">IoT</span><span class="tag">Microcontrollers</span><span class="tag">Electronics</span><span class="tag">ThingSpeak</span></div>
+					<a class="repo" href="https://github.com/smyrnakis/beeHiveSystem" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+				</div>
+			</div>
+			<div class="card">
+				<div class="thumb"><img src="images/prj/balcony-automation.webp" alt="Balcony automation controller" loading="lazy" /></div>
+				<div class="body">
+					<h4>Balcony automation</h4>
+					<div class="yr">2016</div>
+					<p>PIC + RTC controller for balcony lamps and plant watering, driven by real time, ambient light, and a PIR sensor, with settings in EEPROM.</p>
+					<div class="tags"><span class="tag">PIC Microcontrollers</span><span class="tag">Embedded C</span><span class="tag">Electronics</span></div>
+					<a class="repo" href="https://www.facebook.com/media/set/?set=a.10201540874423144&type=3" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M21 5H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-1 12H4l4.5-6 3 4 3-3.5L20 17z"/><circle cx="8" cy="9" r="1.6"/></svg> Photo gallery</a>
+				</div>
+			</div>
+			<div class="card">
+				<div class="thumb"><img src="images/prj/tasks-timer.webp" alt="Tasks Timer device" loading="lazy" /></div>
+				<div class="body">
+					<h4>Tasks Timer</h4>
+					<div class="yr">2014</div>
+					<p>PIC16F887 + DS1307 tracker for ten tasks — alarms, chimes, countdown, and brown-out-safe EEPROM save/restore in a modular stack.</p>
+					<div class="tags"><span class="tag">PIC Microcontrollers</span><span class="tag">RTC</span><span class="tag">Electronics</span></div>
+					<a class="repo" href="https://github.com/smyrnakis/tasks-timer" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- BOOKS -->
+	<section id="books" class="wrap">
+		<p class="eyebrow">Bookshelf</p>
+		<h2 class="sec">What I'm reading</h2>
+		<p class="sec-sub">A running shelf of the books that shaped how I think about tech, business, and people. Drag, use the arrows, or just watch it drift →</p>
+		<div class="shelf-wrap">
+			<button class="shelf-nav prev" aria-label="Scroll books left"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+			<div class="fade l"></div>
+			<!-- TODO: add your Amazon.fr affiliate link on each cover, e.g. href="https://www.amazon.fr/dp/XXXX?tag=YOURTAG" -->
+			<div class="shelf" tabindex="0" aria-label="Book shelf, scroll horizontally">
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/thinkingFastAndSlow.webp" alt="Thinking, Fast and Slow" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/superintelligence.webp" alt="Superintelligence" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/startWithWhy.webp" alt="Start With Why" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/theLeanStartup.webp" alt="The Lean Startup" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/range.webp" alt="Range" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/theBlackSwan.webp" alt="The Black Swan" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/theChangingWorldOrder.webp" alt="The Changing World Order" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/exhalation.webp" alt="Exhalation" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/surroundedByIdiots.webp" alt="Surrounded by Idiots" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/theEntepreneurMind.webp" alt="The Entrepreneur Mind" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/economicsInMinutes.webp" alt="Economics in Minutes" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/howNotToBeWrong.webp" alt="How Not to Be Wrong" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/theShockDoctrine.webp" alt="The Shock Doctrine" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/irrationalLoyalty.webp" alt="Irrational Loyalty" loading="lazy" /></a>
+				<a class="book" href="#" target="_blank" rel="noopener"><img src="images/books/brandingIsSex.webp" alt="Branding Is Sex" loading="lazy" /></a>
+			</div>
+			<div class="fade r"></div>
+			<button class="shelf-nav next" aria-label="Scroll books right"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+		</div>
+		<!-- <p class="aff-note">↗ Some covers are <b>Amazon affiliate links</b> — as an Amazon Associate I earn from qualifying purchases, at no extra cost to you.</p> -->
+	</section>
+
+	<!-- CONTACT -->
+	<section id="contact" class="wrap contact">
+		<p class="eyebrow" style="text-align:center">Say hello</p>
+		<h2 class="sec">Let's talk</h2>
+		<p class="sec-sub" style="margin-left:auto;margin-right:auto">Have a question about my work, or an idea worth building? My inbox is open.</p>
+		<a id="emailBtn" class="btn primary" href="#">Email me</a>
+		<div class="social">
+			<a href="https://www.linkedin.com/in/apostolossmyrnakis/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17V10.2H6.1V17h2.24zM7.22 9.24a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6zM18 17v-3.73c0-2-.43-3.53-2.76-3.53-1.12 0-1.87.61-2.18 1.2h-.03V10.2H10.9V17h2.24v-3.36c0-.89.17-1.75 1.27-1.75 1.09 0 1.1 1.02 1.1 1.81V17H18z"/></svg></a>
+			<a href="https://github.com/smyrnakis/" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+			<a href="https://www.credly.com/users/apostolos-smyrnakis/badges" target="_blank" rel="noopener" aria-label="Credly"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></a>
+			<a href="https://www.instagram.com/apo_smy/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.79.22 2.43.47.66.25 1.22.59 1.77 1.15.56.55.9 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77c-.55.56-1.11.9-1.77 1.15-.64.25-1.36.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.79.47-2.43.25-.66.59-1.22 1.15-1.77.55-.56 1.11-.9 1.77-1.15.64-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.51.21-1.86.35-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.35-.31.88-.35 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.21 1.51.35 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.35.14.88.31 1.86.35 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.51-.21 1.86-.35.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.35.31-.88.35-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.21-1.51-.35-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.35-.14-.88-.31-1.86-.35-1.05-.05-1.37-.06-4.04-.06zm0 3.06a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28zm0 8.48a3.34 3.34 0 1 0 0-6.68 3.34 3.34 0 0 0 0 6.68zm6.54-8.69a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+			<a id="emailIcon" href="#" aria-label="Email"><svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+		</div>
+	</section>
+
+	<footer>
+		<div class="wrap">
+			© Apostolos Smyrnakis · Geneva, CH<br />
+			Background photo <i>Le phare</i> © <a href="https://www.instagram.com/nikos_hx/" target="_blank" rel="noopener">Nikos Nikolaou</a>
+		</div>
+	</footer>
+
+	<button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+	<script>
+	  (function(){
+		var u='me', d='smyrnakis.info', mail='mailto:'+u+'@'+d;
+		var btn=document.getElementById('emailBtn');
+		if(btn) btn.href=mail+'?subject='+encodeURIComponent('Hi from smyrnakis.info');
+		var icon=document.getElementById('emailIcon');
+		if(icon) icon.href=mail+'?subject='+encodeURIComponent('Hi from smyrnakis.info');
+	  })();
+	</script>
+	
+	<script>
+		var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+		var shelfBusy = false;   /* true while a book-arrow animation runs, so auto-scroll yields */
+
+		/* impact count-up */
+		(function(){
+			var nums = Array.prototype.slice.call(document.querySelectorAll('.stat .num'));
+			function fmt(n, sep){ return sep ? n.toLocaleString('en-US') : String(n); }
+			function paint(el, v){ el.textContent = (el.dataset.pre||'') + fmt(v, el.dataset.sep) + (el.dataset.suf||''); }
+			if(reduce){ nums.forEach(function(el){ paint(el, +el.dataset.to); }); return; }
+			function run(el){
+				var to = +el.dataset.to, start = null, dur = 1400;
+				function step(ts){ if(!start) start = ts;
+					var p = Math.min((ts-start)/dur, 1), e = 1 - Math.pow(1-p, 3);
+					paint(el, Math.round(to*e)); if(p<1) requestAnimationFrame(step); }
+				requestAnimationFrame(step);
+			}
+			if('IntersectionObserver' in window){
+				var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+					if(e.isIntersecting){ run(e.target); io.unobserve(e.target); } }); }, {threshold:0.4});
+				nums.forEach(function(el){ io.observe(el); });
+			} else { nums.forEach(function(el){ paint(el, +el.dataset.to); }); }
+		})();
+
+		/* back-to-top */
+		(function(){
+			var btn = document.querySelector('.to-top');
+			window.addEventListener('scroll', function(){
+				if(window.scrollY > 420) btn.classList.add('show'); else btn.classList.remove('show');
+			}, {passive:true});
+			btn.addEventListener('click', function(){
+				window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+			});
+		})();
+
+		/* books — drag to scroll + gentle auto-scroll that yields to the user */
+		(function(){
+			var shelf = document.querySelector('.shelf');
+			if(!shelf) return;
+			var down=false, moved=false, startX=0, startLeft=0;
+			shelf.addEventListener('pointerdown', function(e){
+				down=true; moved=false; startX=e.clientX; startLeft=shelf.scrollLeft;
+				shelf.setPointerCapture(e.pointerId); shelf.classList.add('dragging');
+			});
+			shelf.addEventListener('pointermove', function(e){
+				if(!down) return; var dx=e.clientX-startX;
+				if(Math.abs(dx)>3) moved=true; shelf.scrollLeft = startLeft - dx;
+			});
+			function up(){ down=false; shelf.classList.remove('dragging'); }
+			shelf.addEventListener('pointerup', up);
+			shelf.addEventListener('pointercancel', up);
+			/* swallow the click after a drag, and never navigate a placeholder "#" cover */
+			shelf.addEventListener('click', function(e){
+				var a = e.target.closest('.book');
+				var href = a && a.getAttribute('href');
+				if(moved || !href || href === '#'){ e.preventDefault(); e.stopPropagation(); }
+			}, true);
+
+			if(!reduce){
+				var paused=false, dir=1, visible=false, running=false, frac=0, SPEED=0.6;
+				['pointerenter','pointerdown','touchstart'].forEach(function(ev){
+					shelf.addEventListener(ev, function(){ paused=true; }, {passive:true}); });
+				['pointerleave','pointerup','touchend'].forEach(function(ev){
+					shelf.addEventListener(ev, function(){ paused=false; }, {passive:true}); });
+				function tick(){
+					if(!visible){ running=false; return; }
+					if(!paused && !shelfBusy){
+						/* accumulate fractionally, but move scrollLeft by WHOLE pixels — Firefox ignores sub-pixel scrollLeft */
+						frac += SPEED; var stepPx = frac | 0;
+						if(stepPx){ frac -= stepPx; shelf.scrollLeft += dir*stepPx; }
+						var max = shelf.scrollWidth - shelf.clientWidth;
+						if(shelf.scrollLeft >= max - 1) dir=-1; else if(shelf.scrollLeft <= 0) dir=1;
+					}
+					requestAnimationFrame(tick);
+				}
+				if('IntersectionObserver' in window){
+					new IntersectionObserver(function(es){ es.forEach(function(e){
+						visible = e.isIntersecting;
+						if(visible && !running){ running=true; requestAnimationFrame(tick); }
+					}); }, {threshold:0.05}).observe(shelf);
+				} else { visible=true; running=true; requestAnimationFrame(tick); }
+			}
+		})();
+
+		/* books — edge arrows: manual integer-step animation (works even where native smooth scrollBy doesn't) */
+		(function(){
+			var wrap = document.querySelector('.shelf-wrap');
+			var shelf = wrap && wrap.querySelector('.shelf');
+			var prev = wrap && wrap.querySelector('.shelf-nav.prev');
+			var next = wrap && wrap.querySelector('.shelf-nav.next');
+			if(!shelf || !prev || !next) return;
+			function maxScroll(){ return Math.max(0, shelf.scrollWidth - shelf.clientWidth); }
+			function page(){ return Math.max(220, Math.round(shelf.clientWidth * 0.8)); }
+			var anim=null;
+			function animateBy(delta){
+				if(anim) cancelAnimationFrame(anim);
+				var from=shelf.scrollLeft, to=Math.max(0, Math.min(maxScroll(), from+delta));
+				if(reduce){ shelf.scrollLeft=to; return; }
+				var t0=null, dur=340; shelfBusy=true;
+				function frame(ts){ if(t0===null) t0=ts;
+					var p=Math.min((ts-t0)/dur,1), e=1-Math.pow(1-p,3);
+					shelf.scrollLeft=Math.round(from+(to-from)*e);
+					if(p<1){ anim=requestAnimationFrame(frame); } else { anim=null; shelfBusy=false; }
+				}
+				anim=requestAnimationFrame(frame);
+			}
+			prev.addEventListener('click', function(){ animateBy(-page()); });
+			next.addEventListener('click', function(){ animateBy( page()); });
+			function update(){
+				var max=maxScroll();
+				prev.classList.toggle('at-bound', shelf.scrollLeft<=1);
+				next.classList.toggle('at-bound', shelf.scrollLeft>=max-1);
+			}
+			shelf.addEventListener('scroll', update, {passive:true});
+			window.addEventListener('resize', update);
+			window.addEventListener('load', update);
+			update();
+		})();
+	</script>
+</body>
 </html>
