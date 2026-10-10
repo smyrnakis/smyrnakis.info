@@ -1,0 +1,7 @@
+# Reference material kept in Git but not published
+legacy/
+
+# Local development metadata
+.claude/
+.codex/
+.chatgpt/

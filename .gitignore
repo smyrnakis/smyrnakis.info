@@ -1,1 +1,6 @@
 .DS_Store
+
+# Local AI assistant configuration
+.claude/
+.codex/
+.chatgpt/

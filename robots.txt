@@ -1,9 +1,4 @@
-Host: https://smyrnakis.info
-Host: smyrnakis.info
 User-agent: *
-Disallow: /zip/
-Disallow: /elements.html
-Disallow: /generic.html
-Disallow: /projects.html
+Disallow: /legacy/
 Disallow: /LICENSE.txt
 Disallow: /readme.md
