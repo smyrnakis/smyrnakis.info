@@ -137,6 +137,26 @@
 		.job ul{margin:0;padding-left:18px;color:var(--muted);font-size:0.92rem}
 		.job ul li{margin-bottom:6px}
 		.job ul li b{color:var(--ink);font-weight:600}
+		/* Company logos: a desktop rail, then a compact row on mobile. */
+		.job{display:grid;grid-template-columns:172px minmax(0,1fr);column-gap:26px;padding-bottom:40px}
+		.job-brands{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding-top:4px}
+		.brand{position:relative;display:grid;place-items:center;width:172px;height:80px;
+			border-radius:10px;background:#fff;overflow:hidden;border:1px solid rgba(255,255,255,0.2)}
+		.brand img{display:block;object-fit:contain;width:144px;height:58px}
+		.brand.sitasys img{position:absolute;max-width:none;width:264px;height:176px}
+		.brand.cern img{width:144px;height:72px}
+		.brand.pappas img{height:52px}
+		.brand:focus-visible{outline:3px solid var(--teal-bright);outline-offset:4px}
+		.job-copy{min-width:0}
+		@media(max-width:720px){
+			.job{grid-template-columns:minmax(0,1fr);padding-left:24px;row-gap:16px}
+			.job-brands{flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;padding-top:0}
+			.brand{width:144px;height:64px}
+			.brand img{width:120px;height:48px}
+			.brand.sitasys img{width:220px;height:147px}
+			.brand.cern{width:96px}
+			.brand.cern img{width:110px;height:58px}
+		}
 
 		/* skills — every chip identical */
 		.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -309,6 +329,10 @@
 		<p class="sec-sub">Across SaaS customer success, enterprise IT, and R&amp;D engineering.</p>
 		<div class="timeline">
 			<div class="job">
+				<div class="job-brands">
+					<a class="brand sitasys" href="https://sitasys.com" target="_blank" rel="noopener" aria-label="Sitasys AG website"><img src="images/logos/sitasys.png" alt="" width="600" height="400" loading="lazy" /></a>
+				</div>
+				<div class="job-copy">
 				<h3>Customer Success Manager · Solutions Engineer</h3>
 				<div class="co"><a href="https://sitasys.com" target="_blank" rel="noopener">Sitasys AG</a> — <a href="https://www.evalink.io/" target="_blank" rel="noopener">evalink</a></div>
 				<div class="when">Sep 2021 – present · Geneva, CH</div>
@@ -319,8 +343,13 @@
 					<li>Automated mandatory Swiss fire-alarm commissioning — a <b>2-day manual process cut to minutes</b>, adopted by 8 major Swiss players.</li>
 					<li>Built a <b>100+ asset delivery library</b> and a documentation programme from zero.</li>
 				</ul>
+				</div>
 			</div>
 			<div class="job">
+				<div class="job-brands">
+					<a class="brand cern" href="https://home.cern/" target="_blank" rel="noopener" aria-label="CERN website"><img src="images/logos/cern.png" alt="" width="650" height="366" loading="lazy" /></a>
+				</div>
+				<div class="job-copy">
 				<h3>Systems &amp; Software Engineer</h3>
 				<div class="co"><a href="https://home.cern/" target="_blank" rel="noopener">CERN</a> — IT Department</div>
 				<div class="when">Feb 2017 – Apr 2021 · Geneva, CH</div>
@@ -329,14 +358,20 @@
 					<li>Evangelised adoption with <b>5+ departmental</b> presentations and CERN-wide training material.</li>
 					<li>Windows &amp; macOS 3rd-level support — <b>400+ tickets</b> resolved.</li>
 				</ul>
+				</div>
 			</div>
 			<div class="job">
+				<div class="job-brands">
+					<a class="brand pappas" href="https://www.pappaslift.gr/?lang=en" target="_blank" rel="noopener" aria-label="Pappas Elevators website"><img src="images/logos/pappas.png" alt="" width="573" height="189" loading="lazy" /></a>
+				</div>
+				<div class="job-copy">
 				<h3>Electronics Engineer · Junior R&amp;D</h3>
 				<div class="co"><a href="https://www.pappaslift.gr/?lang=en" target="_blank" rel="noopener">Pappas Elevators S.A.</a></div>
 				<div class="when">Jun 2013 – May 2015 · Aspropyrgos, GR</div>
 				<ul>
 					<li>Designed tester units and testing procedures; built proof-of-concept elevator telemetry and remote-evacuation prototypes.</li>
 				</ul>
+				</div>
 			</div>
 		</div>
 	</section>

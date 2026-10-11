@@ -4,3 +4,6 @@
 .claude/
 .codex/
 .chatgpt/
+
+# Local design comparisons
+.career-preview/
