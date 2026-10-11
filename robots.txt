@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /legacy/
 Disallow: /LICENSE.txt
 Disallow: /readme.md
+
+Sitemap: https://smyrnakis.info/sitemap.xml
